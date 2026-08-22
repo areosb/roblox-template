@@ -1,0 +1,44 @@
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LPM
+        run: |
+          curl -fsSL -o lpm-linux https://github.com/luaupm/cli/releases/latest/download/lpm-linux-x86_64
+          chmod +x lpm-linux
+          ./lpm-linux self install
+          echo "$HOME/.lpm/bin" >> "$GITHUB_PATH"
+
+      # Cache only the archive/index caches, restored AFTER lpm exists,
+      # so lpm install --locked can skip re-downloading known-good archives
+      - name: Cache LPM archives
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.lpm/archive-cache
+            ~/.lpm/index-cache
+          key: lpm-archives-${{ runner.os }}-${{ hashFiles('lpm.lock') }}
+          restore-keys: lpm-archives-${{ runner.os }}-
+
+      - name: Install dependencies & tools
+        run: lpm install --locked
+
+      - name: Format check
+        run: larvae fmt --check .
+
+      - name: Lint
+        run: larvae lint .
+
+      - name: Whole-project check
+        run: larvae check
+
+      - name: Build
+        run: |
+          larvae process
+          rogen
+          rojo build .larvae/build.project.json --output game.rbxl
+
+      - name: Test
+        run: lest
