@@ -5,7 +5,7 @@
 input = "src"
 output = "dist"
 target = "roblox-string"
-exclude = ["packages"]
+exclude = ["packages", "src/remotes"]
 
 [rules]
 remove_comments = { except = ["^--!"] }
