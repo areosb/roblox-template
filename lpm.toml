@@ -1,0 +1,22 @@
+# Manifest for this project. See https://luaupm.com/docs
+# Add dependencies with `lpm add <scope/name>`, then run `lpm install`.
+
+[indices]
+wally = "https://github.com/UpliftGames/wally-index"
+pesde = "https://github.com/pesde-pkg/index"
+
+[dependencies]
+core = { name = "chief/core", version = "^" }
+vow = { name = "synttx/vow", version = "^", index = "wally" }
+
+[tools]
+larvae = "larvae-luau/larvae@0.5.0"
+rojo = "rojo-rbx/rojo@7.7.0"
+rogen = "ldgerrits/rogen@1.4.3"
+lune = "lune-org/lune@0.10.5"
+blink = "1Axen/blink@0.18.8"
+lest = "lest-luau/lest@0.5.0"
+
+[scripts]
+build = "rojo build .larvae/build.project.json -o build.rbxl"
+serve = ["larvae process -w", "rogen watch", "rojo serve .larvae/build.project.json"]

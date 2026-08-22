@@ -1,0 +1,9 @@
+option ServerOutput = "../src/remotes/server/blink.luau"
+option ClientOutput = "../src/remotes/client/blink.luau"
+ 
+event MyFirstEvent {
+    from: Server,
+    type: Reliable,
+    call: SingleSync,
+    data: string
+}

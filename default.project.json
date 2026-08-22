@@ -1,0 +1,68 @@
+{
+	"name": "sum",
+	"tree": {
+		"$className": "DataModel",
+		"Lighting": {},
+		"ReplicatedFirst": {},
+		"ReplicatedStorage": {
+			"packages": {
+				"$path": "packages"
+			},
+			"shared": {
+				"$className": "Folder",
+				"$ignoreUnknownInstances": false,
+				"systems": {
+					"$ignoreUnknownInstances": false,
+					"$path": {
+						"optional": "src/systems/shared"
+					}
+				}
+			}
+		},
+		"RobloxPluginGuiService": {},
+		"ServerScriptService": {
+			"server": {
+				"$className": "Folder",
+				"$ignoreUnknownInstances": false,
+				"remotes": {
+					"$ignoreUnknownInstances": false,
+					"$path": {
+						"optional": "src/remotes/server"
+					}
+				},
+				"systems": {
+					"$ignoreUnknownInstances": false,
+					"$path": {
+						"optional": "src/systems/server"
+					}
+				}
+			}
+		},
+		"ServerStorage": {},
+		"SoundService": {},
+		"StarterGui": {},
+		"StarterPack": {},
+		"StarterPlayer": {
+			"StarterCharacterScripts": {},
+			"StarterPlayerScripts": {
+				"client": {
+					"$className": "Folder",
+					"$ignoreUnknownInstances": false,
+					"remotes": {
+						"$ignoreUnknownInstances": false,
+						"$path": {
+							"optional": "src/remotes/client"
+						}
+					},
+					"systems": {
+						"$ignoreUnknownInstances": false,
+						"$path": {
+							"optional": "src/systems/client"
+						}
+					}
+				}
+			}
+		},
+		"Workspace": {}
+	}
+}

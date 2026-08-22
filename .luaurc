@@ -1,0 +1,7 @@
+{
+  "aliases": {
+    "pkg": "packages/roblox",
+    "lune": "~/.lune/.typedefs/0.10.5/",
+    "lest": ".lest/core"
+  }
+}

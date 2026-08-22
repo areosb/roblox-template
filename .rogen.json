@@ -1,0 +1,20 @@
+{
+	"source": [
+		"src"
+	],
+	"luau": {
+		"output": "default.project.json",
+		"build": "src"
+	},
+	"project": {
+		"name": "sum",
+		"tree": {
+			"$className": "DataModel",
+			"ReplicatedStorage": {
+				"packages": {
+					"$path": "packages"
+				}
+			}
+		}
+	}
+}

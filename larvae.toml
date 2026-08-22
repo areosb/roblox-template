@@ -1,0 +1,31 @@
+# larvae configuration, run `larvae self code` for editor completion.
+# No default.project.json found, the roblox-string target needs one
+# or a [requires.mounts] table.
+
+input = "src"
+output = "dist"
+target = "roblox-string"
+exclude = ["packages"]
+
+[rules]
+remove_comments = { except = ["^--!"] }
+compute_expression = true
+convert_index_to_field = true
+convert_luau_number = true
+convert_square_root_call = true
+remove_function_call_parens = true
+remove_if_expression = true
+remove_nil_declaration = true
+remove_types = true
+rename_variables = true
+
+[fmt]
+column_width = 120
+indent_type = "tabs"
+indent_width = 4
+quote_style = "auto-prefer-double"
+function_call.style = "hug-last"
+
+[lint]
+std = "roblox"
+# Set levels under [lint.rules]; `larvae lint --explain <name>` describes one.
