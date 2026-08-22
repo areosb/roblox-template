@@ -1,16 +1,12 @@
 name: CI
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push, pull_request]
 
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install LPM
         run: |
@@ -21,8 +17,8 @@ jobs:
 
       # Cache only the archive/index caches, restored AFTER lpm exists,
       # so lpm install --locked can skip re-downloading known-good archives
-      - name: Cache LPM archives
-        uses: actions/cache@v4
+      - name: Cache LPM
+        uses: actions/cache@v6
         with:
           path: |
             ~/.lpm/archive-cache
@@ -30,16 +26,16 @@ jobs:
           key: lpm-archives-${{ runner.os }}-${{ hashFiles('lpm.lock') }}
           restore-keys: lpm-archives-${{ runner.os }}-
 
-      - name: Install dependencies & tools
-        run: lpm install --locked
+      - name: Install dependencies and tools
+        run: lpm install
 
-      - name: Format check
-        run: larvae fmt --check .
+      - name: Format
+        run: larvae fmt --check
 
       - name: Lint
-        run: larvae lint .
+        run: larvae lint
 
-      - name: Whole-project check
+      - name: Check
         run: larvae check
 
       - name: Build
@@ -48,5 +44,5 @@ jobs:
           rogen
           rojo build .larvae/build.project.json --output game.rbxl
 
-      - name: Test
+      - name: Tests
         run: lest

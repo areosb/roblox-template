@@ -1,3 +1,3 @@
 return function()
-	return 3
+	return 2
 end
