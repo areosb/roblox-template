@@ -1,6 +1,10 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   ci:
@@ -8,16 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Install LPM
+      - name: Install lpm
         run: |
           curl -fsSL -o lpm-linux https://github.com/luaupm/cli/releases/latest/download/lpm-linux-x86_64
           chmod +x lpm-linux
           ./lpm-linux self install
           echo "$HOME/.lpm/bin" >> "$GITHUB_PATH"
 
-      # Cache only the archive/index caches, restored AFTER lpm exists,
-      # so lpm install --locked can skip re-downloading known-good archives
-      - name: Cache LPM
+      - name: Cache lpm
         uses: actions/cache@v6
         with:
           path: |
