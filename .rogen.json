@@ -2,12 +2,14 @@
 	"source": [
 		"src"
 	],
+	
 	"luau": {
 		"output": "default.project.json",
 		"build": "src"
 	},
+	
 	"project": {
-		"name": "sum",
+		"name": "roblox-template",
 		"tree": {
 			"$className": "DataModel",
 			"ReplicatedStorage": {
