@@ -1,4 +1,4 @@
-name: CI
+name: ci
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  ci:
+  analysis:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -28,7 +28,7 @@ jobs:
           key: lpm-archives-${{ runner.os }}-${{ hashFiles('lpm.lock') }}
           restore-keys: lpm-archives-${{ runner.os }}-
 
-      - name: Install dependencies and tools
+      - name: Install packages and tools
         run: lpm install
 
       - name: Format
