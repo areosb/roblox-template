@@ -13,7 +13,6 @@ vow = { name = "synttx/vow", version = "^", index = "wally" }
 larvae = "larvae-luau/larvae@0.5.0"
 rojo = "rojo-rbx/rojo@7.7.0"
 rogen = "ldgerrits/rogen@1.4.3"
-lune = "lune-org/lune@0.10.5"
 blink = "1Axen/blink@0.18.8"
 lest = "lest-luau/lest@0.5.0"
 

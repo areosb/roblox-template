@@ -9,7 +9,7 @@ include = ["tests/unit/*.spec.luau"]
 include = ["tests/integration/*.spec.luau"]
 
 [settings]
-backend = "lune" # default for suites that don't declare one
+backend = "native" # default for suites that don't declare one
 timeout_ms = 5000
 # The framework ships inside the lest binary and is written to .lest/core.
 # Set `core = "path/to/core/src"` only to point at your own copy instead.

@@ -10,7 +10,6 @@ A starter template for Roblox games that includes Roblox Studio sync, package an
 architecture for Roblox
 - **[Larvae](https://github.com/larvae-luau/larvae)** — Luau linter, formatter, compiler to `dist`, and supports require aliases
 - **[Blink](https://github.com/1Axen/blink)** — Buffer networking
-- **[Lune](https://github.com/lune-org/lune)** — Luau runtime, backend for `tests`
 - **[Lest](https://github.com/lest-luau/lest)** — Test framework, used to run `tests`
 
 ## Structure
