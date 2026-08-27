@@ -32,21 +32,34 @@ tests/
     integration/  → *.spec.luau, tests multiple modules
 ```
 
+## Conventions
+
+This template encourages a few conventions to keep the codebase consistent:
+
+- **Commits:** Use [Conventional Commits](https://www.conventionalcommits.org/), such as `feat: initial commit`, `fix: correct damage calculation`.
+
+- **Naming:** Use `camelCase` for directory and file names.
+
+- **Code:** Follow standard Luau style conventions and keep code consistently formatted and styled with the provided tooling.
+
+
 ## CI Pipeline
+
 Every push and pull request to `main` runs a CI pipeline that goes through these steps:
 
-1. Install lpm
-2. Cache lpm
-3. Install packages and tools
-4. Format
-5. Lint
-6. Check
-7. Build
-8. Tests
+1. Checkout repository
+2. Install lpm
+3. Cache lpm
+4. Install packages and tools
+5. Format
+6. Lint
+7. Check
+8. Build
+9. Tests
 
 ## Getting Started
 
-1. Create your own repo from this template.
+1. Create your own repository from this template.
 
 2. Install packages and tools:
    ```bash
