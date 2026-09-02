@@ -13,24 +13,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Install lpm
+      - name: Install Ember
         run: |
-          curl -fsSL -o lpm-linux https://github.com/luaupm/cli/releases/latest/download/lpm-linux-x86_64
-          chmod +x lpm-linux
-          ./lpm-linux self install
-          echo "$HOME/.lpm/bin" >> "$GITHUB_PATH"
+          curl -fsSL -o embr-linux https://github.com/luaupm/cli/releases/latest/download/embr-linux-x86_64
+          chmod +x embr-linux
+          ./embr-linux self install
+          echo "$HOME/.ember/bin" >> "$GITHUB_PATH"
 
-      - name: Cache lpm
+      - name: Cache Ember
         uses: actions/cache@v6
         with:
           path: |
-            ~/.lpm/archive-cache
-            ~/.lpm/index-cache
-          key: lpm-archives-${{ runner.os }}-${{ hashFiles('lpm.lock') }}
-          restore-keys: lpm-archives-${{ runner.os }}-
+            ~/.ember/archive-cache
+            ~/.ember/index-cache
+          key: ember-archives-${{ runner.os }}-${{ hashFiles('ember.lock') }}
+          restore-keys: ember-archives-${{ runner.os }}-
 
       - name: Install packages and tools
-        run: lpm install --locked
+        run: embr install --locked
 
       - name: Format
         run: larvae fmt --check
