@@ -14,4 +14,8 @@
         "editor.defaultFormatter": "AndrewBordis.larvae",
         "editor.formatOnSave": true
     },
+    
+    "files.exclude": {
+        "dist": true
+    },
 }

@@ -4,3 +4,4 @@ packages/
 dist/
 /.lest
 sourcemap.json
+.ember-patch/

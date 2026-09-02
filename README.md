@@ -4,7 +4,7 @@ A starter template for Roblox games that includes Roblox Studio sync, package an
 
 ## Tech Stack
 
-- **[lpm](https://luaupm.com/)** — Package and toolchain manager
+- **[Ember](https://github.com/ember-luau/ember)** — Package and toolchain manager
 - **[Rojo](https://github.com/rojo-rbx/rojo)** — Sync to Roblox Studio
 - **[Rogen](https://github.com/ldgerrits/rogen)** — Feature-based
 architecture for Roblox
@@ -48,8 +48,8 @@ This template encourages a few conventions to keep the codebase consistent:
 Every push and pull request to `main` runs a CI pipeline that goes through these steps:
 
 1. Checkout repository
-2. Install lpm
-3. Cache lpm
+2. Install Ember
+3. Cache Ember
 4. Install packages and tools
 5. Format
 6. Lint
@@ -63,12 +63,12 @@ Every push and pull request to `main` runs a CI pipeline that goes through these
 
 2. Install packages and tools:
    ```bash
-   lpm install
+   embr install
    ```
 
 3. Sync to Roblox Studio:
    ```bash
-   lpm serve
+   embr serve
    ```
 
 ## Building
@@ -76,5 +76,5 @@ Every push and pull request to `main` runs a CI pipeline that goes through these
 To produce a `.rbxl` place file:
 
 ```bash
-lpm build
+embr build
 ```
